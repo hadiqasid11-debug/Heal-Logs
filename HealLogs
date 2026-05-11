@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal Logs | Your Safe Space by Hadiqa Sid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <style>
+        :root {
+            --warm-white: #FDFBF7;
+            --cream: #F5F1E9;
+            --dusty-pink: #E6B8A2;
+            --forest-green: #4A5D4E;
+            --mocha: #5C4D4D;
+            --soft-brown: #A68A7C;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--warm-white);
+            color: var(--mocha);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .blog-body { font-family: 'Lora', serif; line-height: 1.8; }
+
+        .glass-nav {
+            background: rgba(253, 251, 247, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(166, 138, 124, 0.1);
+        }
+
+        .rounded-card { border-radius: 2rem; }
+
+        .soft-shadow {
+            box-shadow: 0 10px 30px -10px rgba(166, 138, 124, 0.2);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(166, 138, 124, 0.3);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: var(--cream); }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--dusty-pink); border-radius: 10px; }
+
+        .dark-mode {
+            background-color: #2D2424;
+            color: #F5F1E9;
+        }
+        .dark-mode .bg-white, .dark-mode .bg-cream { background-color: #3D3232; color: #F5F1E9; }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[100] bg-[#FDFBF7] flex items-center justify-center transition-opacity duration-1000">
+        <div class="text-center">
+            <h1 class="text-4xl serif italic text-mocha animate-pulse">Heal Logs</h1>
+            <p class="text-soft-brown tracking-widest text-sm mt-2">Welcome to Hadiqa's Safe Space...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl serif font-bold text-forest-green tracking-tight">Heal Logs</a>
+            
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#home" class="hover:text-dusty-pink transition">Home</a>
+                <a href="#blogs" class="hover:text-dusty-pink transition">Reflections</a>
+                <a href="#about" class="hover:text-dusty-pink transition">The Author</a>
+                <a href="#contact" class="hover:text-dusty-pink transition">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <button onclick="toggleDarkMode()" class="text-mocha hover:text-dusty-pink"><i class="fas fa-moon"></i></button>
+                <a href="#subscribe" class="hidden md:block bg-forest-green text-white px-6 py-2 rounded-full text-sm hover:bg-opacity-90 transition">Newsletter</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 text-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-20" alt="Healing background">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-warm-white to-warm-white"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl">
+            <span class="text-soft-brown uppercase tracking-[0.3em] text-xs mb-4 block animate-float">Curated by Hadiqa Sid</span>
+            <h1 class="text-5xl md:text-7xl serif text-mocha leading-tight mb-6 italic">A soft place for heavy hearts.</h1>
+            <p class="text-lg text-mocha/80 mb-8 font-light italic">“Healing is not a race. It is a slow, beautiful return to yourself.”</p>
+            <a href="#blogs" class="bg-dusty-pink text-white px-10 py-4 rounded-full soft-shadow hover-lift inline-block">Begin Reading</a>
+        </div>
+    </header>
+
+    <!-- Featured Blogs Section -->
+    <section id="blogs" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="text-4xl serif italic text-center mb-16">The Healing Logs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <!-- Blog 1 -->
+            <article class="group hover-lift">
+                <div class="relative overflow-hidden rounded-card h-80 mb-6">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Self Love">
+                </div>
+                <span class="text-xs text-soft-brown uppercase tracking-widest">By Hadiqa Sid • 5 Min Read</span>
+                <h3 class="text-2xl serif mt-2 mb-3">How to Practice Self Love</h3>
+                <p class="text-mocha/70 text-sm italic mb-4">Learning to become your own safe place...</p>
+                <button onclick="openBlog('blog1')" class="text-forest-green font-medium text-sm underline">Read Log →</button>
+            </article>
+
+            <!-- Blog 2 -->
+            <article class="group hover-lift">
+                <div class="relative overflow-hidden rounded-card h-80 mb-6">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Struggle">
+                </div>
+                <span class="text-xs text-soft-brown uppercase tracking-widest">By Hadiqa Sid • 4 Min Read</span>
+                <h3 class="text-2xl serif mt-2 mb-3">No Pain No Gain</h3>
+                <p class="text-mocha/70 text-sm italic mb-4">Every struggle teaches us something valuable...</p>
+                <button onclick="openBlog('blog2')" class="text-forest-green font-medium text-sm underline">Read Log →</button>
+            </article>
+
+            <!-- Blog 3 -->
+            <article class="group hover-lift">
+                <div class="relative overflow-hidden rounded-card h-80 mb-6">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dac3adaf471?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Alone">
+                </div>
+                <span class="text-xs text-soft-brown uppercase tracking-widest">By Hadiqa Sid • 6 Min Read</span>
+                <h3 class="text-2xl serif mt-2 mb-3">The Art of Being Alone</h3>
+                <p class="text-mocha/70 text-sm italic mb-4">Finding peace in your own company...</p>
+                <button onclick="openBlog('blog3')" class="text-forest-green font-medium text-sm underline">Read Log →</button>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-cream py-24 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3">
+                <div class="w-64 h-64 rounded-full overflow-hidden border-8 border-white soft-shadow">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Hadiqa Sid">
+                </div>
+            </div>
+            <div class="md:w-2/3">
+                <h2 class="text-4xl serif italic mb-4">I'm Hadiqa Sid</h2>
+                <p class="text-lg serif italic text-mocha/80 mb-6">Founder & Emotional Wellness Advocate</p>
+                <p class="text-mocha/70 leading-relaxed mb-6">
+                    Heal Logs was born out of my own journey through the quiet storms of life. I wanted to create a digital sanctuary where words act as medicine and where no one feels like they are healing alone. This is a safe place for you to rest, reflect, and rediscover your inner peace.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="mailto:Hadiqasid11@gmail.com" class="bg-mocha text-white px-6 py-2 rounded-full text-sm">Say Hello</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page Section -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="bg-white rounded-[3rem] overflow-hidden soft-shadow flex flex-col md:flex-row">
+            <div class="md:w-1/2 bg-forest-green p-12 text-white flex flex-col justify-center">
+                <h2 class="text-4xl serif italic mb-6">Reach Out</h2>
+                <p class="italic mb-8 opacity-80">Whether you need a listening ear or want to share your healing journey, my inbox is always open for you.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-envelope text-dusty-pink"></i>
+                        <span>Hadiqasid11@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fab fa-instagram text-dusty-pink"></i>
+                        <span>@HealLogsByHadiqa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 p-12">
+                <form class="space-y-6">
+                    <input type="text" placeholder="Your Name" class="w-full border-b border-cream py-3 focus:border-dusty-pink outline-none bg-transparent">
+                    <input type="email" placeholder="Your Email" class="w-full border-b border-cream py-3 focus:border-dusty-pink outline-none bg-transparent">
+                    <textarea placeholder="How are you feeling today?" class="w-full border-b border-cream py-3 focus:border-dusty-pink outline-none bg-transparent h-32"></textarea>
+                    <button class="bg-dusty-pink text-white px-10 py-3 rounded-full hover-lift">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warm-white border-t border-cream py-16 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-3xl serif italic text-forest-green mb-4">Heal Logs</h3>
+            <p class="text-soft-brown italic mb-6">Created with love by Hadiqa Sid</p>
+            <p class="text-sm text-mocha/60 mb-8">Questions? Reach out at: <span class="text-mocha font-medium">Hadiqasid11@gmail.com</span></p>
+            <div class="flex justify-center space-x-6 text-xl text-mocha mb-12">
+                <a href="#" class="hover:text-dusty-pink transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-dusty-pink transition"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="hover:text-dusty-pink transition"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="text-xs text-soft-brown uppercase tracking-widest border-t border-cream pt-8">
+                © 2024 HEAL LOGS • AUTHORED BY HADIQA SID
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Blogs -->
+    <div id="blogModal" class="fixed inset-0 z-[60] bg-mocha/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-warm-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-card p-6 md:p-12 relative shadow-2xl custom-scrollbar">
+            <button onclick="closeBlog()" class="absolute top-6 right-6 text-2xl text-mocha hover:text-dusty-pink transition"><i class="fas fa-times"></i></button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Loader handling
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
+            }, 1000);
+        }
+
+        // Detailed Blog Content
+        const blogData = {
+            blog1: {
+                title: "How to Practice Self Love",
+                subtitle: "By Hadiqa Sid • Safe Place",
+                img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+                content: `
+                    <p class="mb-6 italic">There was a time when I looked for love in other people’s words. I waited for appreciation, attention, and validation to feel worthy. But slowly, I realized something important — self-love is not selfish. It is necessary.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Start Speaking Kindly to Yourself</h4>
+                    <p class="mb-4">Self-love begins when you replace negative thoughts with softer ones. Talk to yourself like you would talk to a dear friend.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Take Care of Your Mind and Body</h4>
+                    <p class="mb-4">Self-love is found in small habits: sleeping properly, eating healthy, and taking breaks when the world gets too loud.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Stop Comparing</h4>
+                    <p class="mb-4">Everyone blooms differently. Your journey is uniquely yours.</p>
+                    <p class="mt-8 font-bold text-forest-green">Conclusion: Be gentle with yourself because you are still growing. — Hadiqa Sid</p>
+                `
+            },
+            blog2: {
+                title: "No Pain No Gain",
+                subtitle: "By Hadiqa Sid • Resilience",
+                img: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800",
+                content: `
+                    <p class="mb-6 italic">Life is not always easy. Sometimes pain, heartbreak, and failure become part of our journey. But difficult moments teach us lessons comfort never can.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Pain Makes You Stronger</h4>
+                    <p class="mb-4">Challenges help people grow emotionally stronger and wiser. The cracks are where the light gets in.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Failure Is a Lesson</h4>
+                    <p class="mb-4">Failure is only a chapter, not your whole story. It is a redirection toward something better.</p>
+                    <p class="mt-8 font-bold text-forest-green">Conclusion: The storms in your life are helping you become better. — Hadiqa Sid</p>
+                `
+            },
+            blog3: {
+                title: "The Art of Being Alone",
+                subtitle: "By Hadiqa Sid • Solitude",
+                img: "https://images.unsplash.com/photo-1499209974431-9dac3adaf471?auto=format&fit=crop&q=80&w=800",
+                content: `
+                    <p class="mb-6 italic">Many people fear being alone because silence feels uncomfortable. But solitude can become peaceful and beautiful.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Alone Does Not Mean Lonely</h4>
+                    <p class="mb-4">Being alone gives you space to understand yourself better. It is where you find your true voice.</p>
+                    <h4 class="text-xl serif italic mt-8 mb-4">Enjoy Simple Moments</h4>
+                    <p class="mb-4">Coffee, books, journaling, and nature walks can heal the heart more than empty company.</p>
+                    <p class="mt-8 font-bold text-forest-green">Conclusion: Being alone teaches self-love and emotional peace. — Hadiqa Sid</p>
+                `
+            }
+        };
+
+        function openBlog(id) {
+            const blog = blogData[id];
+            const content = `
+                <img src="${blog.img}" class="w-full h-80 object-cover rounded-card mb-8">
+                <span class="text-dusty-pink uppercase tracking-widest text-xs font-bold">${blog.subtitle}</span>
+                <h2 class="text-4xl serif italic my-4 text-mocha">${blog.title}</h2>
+                <div class="blog-body text-mocha/80 text-lg">
+                    ${blog.content}
+                </div>
+            `;
+            document.getElementById('modalContent').innerHTML = content;
+            document.getElementById('blogModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBlog() {
+            document.getElementById('blogModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        ScrollReveal().reveal('.hover-lift', { delay: 200, distance: '50px', origin: 'bottom', interval: 100 });
+    </script>
+</body>
+</html>
